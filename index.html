@@ -10,27 +10,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#08090d;--panel:rgba(15,17,24,.78);--line:rgba(255,255,255,.12);--muted:#a6a8b3;--accent:#a78bfa;--green:#1ed760}
+:root{color-scheme:dark;--bg:#000;--panel:rgba(3,3,3,.96);--line:rgba(255,255,255,.13);--muted:#999;--accent:#fff;--green:#fff}
 *{box-sizing:border-box}
 html{min-height:100%;scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:var(--bg);color:#f8f8fb;font-family:Outfit,system-ui,sans-serif;overflow-x:hidden}
+body{margin:0;min-height:100vh;background:#000;color:#fff;font-family:Outfit,system-ui,sans-serif;overflow-x:hidden}
 button,a,input{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit}
-#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-5;filter:brightness(.35) saturate(.8)}
-.bg-overlay{position:fixed;inset:0;z-index:-4;background:linear-gradient(135deg,rgba(5,6,10,.76),rgba(9,8,17,.58)),radial-gradient(circle at 50% 20%,rgba(125,91,220,.18),transparent 48%)}
-#bg-glow{position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:radial-gradient(circle at 20% 25%,rgba(124,58,237,.18),transparent 35%),radial-gradient(circle at 80% 75%,rgba(29,185,84,.1),transparent 35%);filter:blur(36px)}
+#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-5;filter:grayscale(1) brightness(.27) contrast(1.08)}
+.bg-overlay{position:fixed;inset:0;z-index:-4;background:rgba(0,0,0,.88)}
+#bg-glow{position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:none;filter:none}
 canvas.fx{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
 .topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1380px;margin:auto;padding:22px clamp(18px,4vw,54px)}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
-.brand-mark{display:grid;place-items:center;width:32px;height:32px;overflow:hidden;border-radius:10px;background:linear-gradient(135deg,#a78bfa,#6d28d9);box-shadow:0 0 28px #8b5cf633}.brand-mark img,.enter-mark img{width:100%;height:100%;object-fit:cover;display:block}.brand-mark img[hidden],.enter-mark img[hidden]{display:none}
+.brand-mark{display:grid;place-items:center;width:32px;height:32px;overflow:hidden;border-radius:10px;background:linear-gradient(135deg,#f5f5f5,#777);box-shadow:0 0 28px #ffffff22}.brand-mark img,.enter-mark img{width:100%;height:100%;object-fit:cover;display:block}.brand-mark img[hidden],.enter-mark img[hidden]{display:none}
 .top-actions{display:flex;gap:8px;flex-wrap:wrap}
 .ghost-btn,.primary-btn{border:1px solid var(--line);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:10px 13px;cursor:pointer;transition:.2s ease}
 .ghost-btn:hover,.primary-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.13)}
 .layout{width:min(1250px,calc(100% - 32px));margin:20px auto 50px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:22px;align-items:start}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:26px;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 24px 80px rgba(0,0,0,.28)}
+.panel{background:#030303;border:1px solid var(--line);border-radius:26px;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 24px 80px rgba(0,0,0,.28)}
 .profile-panel{padding:clamp(22px,4vw,42px);text-align:center;overflow:hidden;position:relative}
-.profile-panel:before{content:"";position:absolute;inset:0 0 auto;height:180px;background:radial-gradient(ellipse at 50% 0,rgba(167,139,250,.18),transparent 70%);pointer-events:none}
+.profile-panel:before{content:"";position:absolute;inset:0 0 auto;height:180px;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.11),transparent 70%);pointer-events:none}
 .avatar-wrap{position:relative;width:126px;height:126px;margin:6px auto 20px}
 .avatar{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid rgba(255,255,255,.75);box-shadow:0 0 0 8px rgba(255,255,255,.035),0 18px 45px #0008;background:#171820}
 .avatar-deco{position:absolute;inset:-11px;width:calc(100% + 22px);height:calc(100% + 22px);object-fit:contain;pointer-events:none}
@@ -44,13 +44,13 @@ canvas.fx{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-event
 .section-label:after{content:"";height:1px;flex:1;background:var(--line)}
 .socials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .social-btn{display:flex;justify-content:center;align-items:center;gap:8px;min-height:45px;padding:10px;border:1px solid var(--line);border-radius:14px;background:#ffffff07;text-decoration:none;font-size:13px;font-weight:600;transition:.2s}
-.social-btn:hover{transform:translateY(-3px);background:#ffffff12;border-color:#a78bfa77}
+.social-btn:hover{transform:translateY(-3px);background:#ffffff12;border-color:#ffffff88}
 .social-btn span{font-size:16px}
 .community-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .community-card{position:relative;min-height:155px;padding:17px;border-radius:18px;overflow:hidden;text-decoration:none;border:1px solid var(--line);background:#11131b;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s}
 .community-card:before{content:"";position:absolute;inset:0;background:var(--card-image) center/cover;opacity:.38;transition:.3s}
 .community-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#090a10 2%,rgba(9,10,16,.15) 100%)}
-.community-card:hover{transform:translateY(-4px);border-color:#a78bfa99}
+.community-card:hover{transform:translateY(-4px);border-color:#ffffff99}
 .community-card:hover:before{opacity:.55;transform:scale(1.06)}
 .community-card>*{position:relative;z-index:1}
 .community-card strong{font-size:15px}.community-card small{margin-top:5px;color:#d0ced9}
@@ -58,11 +58,11 @@ canvas.fx{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-event
 .music-panel{padding:22px;overflow:hidden;position:relative}
 .panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
 .panel-heading h2{font-size:15px;margin:0;letter-spacing:.02em}
-.live-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:#1ed76014;color:#8ef5b2;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.live-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:#ffffff12;color:#f5f5f5;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
 .live-pill i{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-.spotify-card{position:relative;isolation:isolate;min-height:430px;padding:20px;border-radius:20px;border:1px solid #ffffff18;overflow:hidden;background:#171922;cursor:pointer;perspective:1000px}
-.spotify-card:before{content:"";position:absolute;inset:-25px;z-index:-2;background:var(--album-art,linear-gradient(135deg,#2b2142,#171922)) center/cover;filter:blur(35px) brightness(.36);transform:scale(1.1)}
-.spotify-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.62))}
+.spotify-card{position:relative;isolation:isolate;min-height:560px;padding:20px;border-radius:20px;border:1px solid #ffffff18;overflow:hidden;background:#050505;cursor:default;perspective:1000px}
+.spotify-card:before{content:"";position:absolute;inset:-25px;z-index:-2;background:var(--album-art,#050505) center/cover;filter:blur(35px) grayscale(1) brightness(.18);transform:scale(1.1)}
+.spotify-card:after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,.76)}
 .music-card-top{display:flex;justify-content:space-between;align-items:center;color:#e2e0eb;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
 .equalizer{display:flex;align-items:flex-end;gap:3px;height:16px}.equalizer b{width:3px;height:45%;border-radius:3px;background:var(--green);animation:eq .7s ease-in-out infinite alternate}.equalizer b:nth-child(2){height:100%;animation-delay:.2s}.equalizer b:nth-child(3){height:65%;animation-delay:.35s}.equalizer b:nth-child(4){height:80%;animation-delay:.1s}.equalizer.paused b{animation-play-state:paused}
 @keyframes eq{to{height:20%}}
@@ -86,12 +86,12 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 .activity-copy{min-width:0}.activity-copy strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-copy small{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.45;overflow-wrap:anywhere}
 .empty-state{padding:22px;text-align:center;border:1px dashed #ffffff25;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}
 .footer{padding:0 20px 30px;text-align:center;color:#777988;font-size:11px}
-.visitor-counter{width:min(420px,calc(100% - 32px));margin:0 auto 24px;padding:16px 20px;display:flex;align-items:center;justify-content:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:rgba(15,17,24,.78);backdrop-filter:blur(18px);box-shadow:0 18px 50px #0003;color:#d9d7e3}
-.visitor-counter-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#a78bfa20;color:#c4b5fd;font-size:20px}
+.visitor-counter{width:min(420px,calc(100% - 32px));margin:0 auto 24px;padding:16px 20px;display:flex;align-items:center;justify-content:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.96);backdrop-filter:blur(18px);box-shadow:0 18px 50px #0003;color:#d9d7e3}
+.visitor-counter-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#ffffff12;color:#ffffff;font-size:20px}
 .visitor-counter-copy{text-align:left}.visitor-counter-label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:700}.visitor-counter-value{font-size:23px;font-weight:800;line-height:1.25;font-variant-numeric:tabular-nums}.visitor-counter-status{font-size:10px;color:#858795;margin-top:2px}
 #enter-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:rgba(5,5,9,.72);backdrop-filter:blur(24px);cursor:pointer;transition:opacity .5s,visibility .5s}
 .enter-content{text-align:center;animation:enterFloat 3s ease-in-out infinite}
-.enter-mark{width:70px;height:70px;display:grid;place-items:center;overflow:hidden;margin:0 auto 18px;border:1px solid #ffffff35;border-radius:24px;background:linear-gradient(135deg,#a78bfa55,#6d28d955);font-size:28px;box-shadow:0 0 70px #8b5cf633}
+.enter-mark{width:70px;height:70px;display:grid;place-items:center;overflow:hidden;margin:0 auto 18px;border:1px solid #ffffff35;border-radius:24px;background:linear-gradient(135deg,#ffffff22,#77777722);font-size:28px;box-shadow:0 0 70px #ffffff22}
 .enter-title{font-size:clamp(22px,4vw,32px);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 .enter-hint{color:#aaa8b8;font-size:12px;letter-spacing:.15em;margin-top:12px}
 #enter-screen.dismissed{opacity:0;visibility:hidden;pointer-events:none}
@@ -100,7 +100,107 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 @keyframes enterFloat{50%{transform:translateY(-7px)}}
 @media(max-width:900px){.layout{grid-template-columns:1fr;max-width:650px;margin-top:8px}.profile-panel{padding:28px 20px}.right-column{grid-row:auto}.spotify-card{min-height:0}.album-art{width:min(65%,230px)}.socials{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:440px){.topbar{padding:16px}.brand{font-size:11px}.top-actions .ghost-btn{padding:9px;font-size:11px}.layout{width:calc(100% - 20px);gap:14px}.panel{border-radius:20px}.music-panel,.activity-panel{padding:15px}.community-grid{grid-template-columns:1fr 1fr}.community-card{min-height:135px;padding:12px}.social-btn{font-size:11px;gap:5px}.spotify-card{padding:15px}.track-title{font-size:19px}}
+/* Smooth two-sided soundtrack card */
+.spotify-card{min-height:430px;padding:0;border:0;background:transparent;overflow:visible;perspective:1200px}
+.spotify-card:before,.spotify-card:after{display:none}
+.music-card-inner{position:relative;min-height:560px;width:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.75,.2,1)}
+.spotify-card.is-flipped .music-card-inner{transform:rotateY(180deg)}
+.music-card-face{position:absolute;inset:0;min-height:560px;padding:20px;border-radius:20px;border:1px solid #292929;background:#050505;overflow:auto;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 18px 55px #0009}
+.music-card-front{transform:rotateY(0)}
+.music-card-back{transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#090909,#000 68%)}
+.flip-card-btn{position:absolute;right:14px;top:13px;z-index:4;border:1px solid #444;border-radius:999px;background:#101010;color:#fff;padding:7px 11px;font-size:9px;font-weight:700;letter-spacing:.1em;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
+.flip-card-btn:hover{background:#242424;border-color:#888;transform:translateY(-1px)}
+.music-card-front .music-card-top{padding-right:100px}
+.code-back-top{display:flex;justify-content:space-between;gap:8px;color:#aaa;font-size:9px;letter-spacing:.14em;font-weight:700}
+.code-status{display:flex;align-items:center;gap:6px}.code-status i{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff}
+.code-back-content{margin:auto 0;padding:20px 2px 10px}.code-kicker{font-size:9px;letter-spacing:.22em;color:#777;font-weight:700;margin:0 0 10px}.code-back-content h3{font-size:clamp(30px,5vw,43px);line-height:.98;letter-spacing:-.055em;margin:0 0 22px;font-weight:800}
+.language-list{display:grid;gap:9px}.language-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid #242424;border-radius:13px;background:#090909}.language-mark{display:grid;place-items:center;width:35px;height:35px;border-radius:10px;background:#161616;border:1px solid #303030;color:#fff;font-size:12px;font-weight:800;flex-shrink:0}.language-item strong,.language-item small{display:block}.language-item strong{font-size:12px;letter-spacing:.04em}.language-item small{font-size:10px;color:#858585;margin-top:3px}.language-item em{font-style:normal;color:#666;font-size:10px;margin-left:auto}.code-footnote{font-size:10px;color:#777;margin:13px 0 0}.back-flip-btn{position:relative;top:auto;right:auto;align-self:flex-start;margin-top:12px}
+@media(max-width:900px){.spotify-card,.music-card-inner,.music-card-face{min-height:560px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Glossy monochrome glass finish */
+:root{--bg:#000;--panel:rgba(255,255,255,.045);--line:rgba(255,255,255,.16);--muted:#a6a6a6;--accent:#fff;--green:#fff}
+body{background:#000}
+.bg-overlay{background:linear-gradient(135deg,rgba(0,0,0,.91),rgba(0,0,0,.78))}
+.panel,.visitor-counter{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025) 42%,rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.19);backdrop-filter:blur(28px) saturate(115%);-webkit-backdrop-filter:blur(28px) saturate(115%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),inset 0 -1px 0 rgba(255,255,255,.035),0 24px 80px rgba(0,0,0,.62)}
+.profile-panel:before{height:230px;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.13),transparent 72%)}
+.ghost-btn,.primary-btn,.social-btn,.activity-item,.local-time,.control-btn,.live-pill,.visitor-counter-icon{background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025));border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.community-card{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.community-card:before{filter:grayscale(1);opacity:.19}
+.community-card:after{background:linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.28))}
+.spotify-card{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.018) 50%,rgba(255,255,255,.045));border-color:rgba(255,255,255,.23);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 18px 55px #0009}
+.spotify-card:before{filter:blur(38px) grayscale(1) brightness(.12)}
+.spotify-card:after{background:linear-gradient(145deg,rgba(0,0,0,.66),rgba(0,0,0,.82))}
+.album-art{filter:grayscale(1);border:1px solid rgba(255,255,255,.2);box-shadow:0 18px 50px #000b,0 0 0 1px #ffffff12}
+.music-card-face{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.17);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.language-item{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018));border-color:rgba(255,255,255,.16);box-shadow:inset 0 1px 0 #ffffff12}
+.language-mark{background:rgba(255,255,255,.075);border-color:#ffffff25}
+#enter-screen{background:radial-gradient(ellipse at 50% 42%,rgba(255,255,255,.07),transparent 42%),rgba(0,0,0,.88);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px)}
+/* The intro remains clickable, but its logo/photo is removed from the first screen. */
+#enter-screen .enter-mark{display:none}
+.enter-title{letter-spacing:.16em}
+@media(hover:hover){.panel,.visitor-counter,.spotify-card{transition:border-color .25s ease,box-shadow .25s ease}.panel:hover,.visitor-counter:hover{border-color:rgba(255,255,255,.27);box-shadow:inset 0 1px 0 rgba(255,255,255,.17),0 28px 90px rgba(0,0,0,.7)}}
+
+
+/* Card sizing safety: keep both faces fully readable on desktop and mobile. */
+.spotify-card,.music-card-inner,.music-card-face{min-height:560px}
+.music-card-face{overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:480px){.spotify-card,.music-card-inner,.music-card-face{min-height:590px}.music-card-face{padding:16px}}
+
+
+/* Mobile-first responsive refinements */
+html{width:100%;-webkit-text-size-adjust:100%;}
+body{width:100%;min-width:320px;}
+img,video{max-width:100%;}
+.layout>*{min-width:0;}
+.music-panel,.activity-panel,.profile-panel{min-width:0;}
+.music-card-inner{height:590px;min-height:590px;}
+.music-card-face{height:590px;min-height:590px;overflow-y:auto;overflow-x:hidden;}
+.music-card-face>*{max-width:100%;}
+@media(max-width:700px){
+  .topbar{width:100%;padding:14px 16px;align-items:center;}
+  .top-actions{justify-content:flex-end;gap:6px;}
+  .top-actions .ghost-btn,.top-actions .primary-btn{min-height:40px;padding:9px 11px;font-size:11px;}
+  .layout{width:calc(100% - 24px);max-width:560px;margin:8px auto 28px;grid-template-columns:minmax(0,1fr);gap:14px;}
+  .profile-panel{padding:24px 17px;}
+  .right-column{grid-template-columns:minmax(0,1fr);gap:14px;}
+  .music-panel,.activity-panel{padding:16px;}
+  .spotify-card{width:100%;min-width:0;}
+  .music-card-inner{height:590px;min-height:590px;}
+  .music-card-face{height:590px;min-height:590px;padding:17px;}
+  .album-art{width:min(62vw,220px);margin:17px auto;}
+  .track-title{font-size:clamp(18px,5vw,22px);}
+  .player-controls{gap:18px;margin:15px 0;}
+  .control-btn{width:42px;height:42px;}
+  .control-btn.main{width:50px;height:50px;}
+  .volume-row{gap:8px;}
+  .volume-row input{min-height:28px;}
+  .flip-card-btn{right:10px;top:10px;padding:8px 10px;font-size:9px;}
+  .music-card-front .music-card-top{padding-right:104px;}
+  .code-back-content{padding:16px 0 8px;}
+  .code-back-content h3{font-size:clamp(29px,8vw,39px);margin-bottom:17px;}
+  .language-list{gap:8px;}
+  .language-item{padding:10px;gap:10px;}
+  .socials{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
+  .social-btn{min-width:0;min-height:44px;padding:9px 5px;font-size:11px;}
+  .community-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .visitor-counter{width:calc(100% - 24px);margin-bottom:20px;}
+}
+@media(max-width:380px){
+  .brand{font-size:10px;letter-spacing:.08em;}
+  .brand-mark{width:29px;height:29px;}
+  .topbar{gap:8px;padding:12px;}
+  .top-actions .ghost-btn,.top-actions .primary-btn{padding:8px;font-size:10px;}
+  .layout{width:calc(100% - 18px);}
+  .music-panel,.activity-panel{padding:13px;}
+  .music-card-face{padding:14px;}
+  .socials{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .community-card{min-height:125px;}
+  .code-back-top{font-size:8px;}
+}
+@media(hover:none){.ghost-btn:hover,.primary-btn:hover,.social-btn:hover,.community-card:hover,.control-btn:hover{transform:none;}}
+@media(prefers-reduced-motion:reduce){.music-card-inner{transition:none;}}
+
 </style>
 </head>
 <body>
@@ -109,7 +209,6 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 </video>
 <div class="bg-overlay"></div><div id="bg-glow"></div><canvas class="fx" id="web" aria-hidden="true"></canvas>
 <header class="topbar">
-  <div class="brand"><span class="brand-mark"><img id="brand-mark-image" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg" alt="Profile logo"><span id="brand-mark-letter" hidden>K</span></span><span>Santino / Profile</span></div>
   <div class="top-actions">
     <button class="ghost-btn" id="sound-toggle" type="button" aria-label="Toggle background music">♫ Sound: Off</button>
   </div>
@@ -146,6 +245,9 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
     <section class="panel music-panel" aria-label="Music player">
       <div class="panel-heading"><h2>NOW PLAYING</h2><span class="live-pill"><i></i><span id="music-state">Background mix</span></span></div>
       <div class="spotify-card" id="music-card">
+        <div class="music-card-inner" id="music-card-inner">
+          <div class="music-card-face music-card-front">
+        <button class="flip-card-btn" id="flip-card-btn" type="button" aria-label="Show website coding languages" aria-pressed="false">VIEW CODE <span aria-hidden="true">↗</span></button>
         <div class="music-card-top"><span id="music-label">Santino's soundtrack</span><div class="equalizer" id="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b></div></div>
         <img id="album-art" class="album-art" src="https://file.garden/arIVMF8UTouAgBFb/1938f2fe5a39b18a63ff368a97fc2754.jpg" alt="Music cover">
         <h3 id="track-title" class="track-title">Is Ya Ready</h3>
@@ -159,6 +261,22 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
         </div>
         <label class="volume-row" for="volume-slider"><span>Volume</span><input id="volume-slider" type="range" min="0" max="1" step=".01" value=".75"><span id="volume-value">75%</span></label>
         <p class="music-note" id="music-note">The soundtrack starts automatically when your browser allows it. Use the volume slider to adjust the sound.</p>
+          </div>
+          <div class="music-card-face music-card-back" aria-label="Website coding languages">
+            <div class="code-back-top"><span class="code-status"><i></i> SOURCE STACK</span></div>
+            <div class="code-back-content">
+              <p class="code-kicker">BUILT WITH</p>
+              <h3>Behind the<br>interface.</h3>
+              <div class="language-list">
+                <div class="language-item"><span class="language-mark">5</span><span><strong>HTML5</strong><small>Structure & content</small></span><em>01</em></div>
+                <div class="language-item"><span class="language-mark">{ }</span><span><strong>CSS3</strong><small>Styling, layout & motion</small></span><em>02</em></div>
+                <div class="language-item"><span class="language-mark">JS</span><span><strong>JavaScript</strong><small>Interactions & functionality</small></span><em>03</em></div>
+              </div>
+              <p class="code-footnote">A minimal stack powering this profile.</p>
+            </div>
+            <button class="flip-card-btn back-flip-btn" id="flip-card-back-btn" type="button">BACK TO SOUNDTRACK <span aria-hidden="true">↻</span></button>
+          </div>
+        </div>
       </div>
       <audio id="bg-audio" autoplay preload="auto" loop src="https://file.garden/arIVMF8UTouAgBFb/Kay%20Flock%20-%20Is%20Ya%20Ready%20(shot%20by%20KLO%20Vizionz).mp3"></audio>
     </section>
@@ -171,14 +289,14 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 <section class="visitor-counter" aria-label="Website visitor counter">
   <div class="visitor-counter-icon" aria-hidden="true">◉</div>
   <div class="visitor-counter-copy">
-    <div class="visitor-counter-label" id="visitor-count-label">Total website visits</div>
+    <div class="visitor-counter-label" id="visitor-count-label">Overall website views</div>
     <div class="visitor-counter-value" id="visitor-count" aria-live="polite">Loading…</div>
     <div class="visitor-counter-status" id="visitor-count-status">Connecting to visitor counter</div>
   </div>
 </section>
 <footer class="footer">Made with care · Profile presence depends on Discord's public Lanyard service.</footer>
 <div id="enter-screen" role="button" tabindex="0" aria-label="Enter profile and enable sound">
-  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">Enter Santino's world</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
+  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">[[[ D O X  M E ]]]</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
@@ -205,8 +323,18 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
   let entered = false, effectsOn = !reducedMotion, lastSpotifyId = '', toastTimer;
   // One configurable image is used for both K-logo locations.
   if (CONFIG.profileMarkImage.trim()) {
-    ['brand-mark-image','enter-mark-image'].forEach(id => { $(id).src = CONFIG.profileMarkImage; $(id).hidden = false; });
-    $('brand-mark-letter').hidden = true; $('enter-mark-letter').hidden = true;
+    // Some logo elements may be absent in customized versions of the page.
+    ['brand-mark-image','enter-mark-image'].forEach(id => {
+      const image = $(id);
+      if (image) {
+        image.src = CONFIG.profileMarkImage;
+        image.hidden = false;
+      }
+    });
+    ['brand-mark-letter','enter-mark-letter'].forEach(id => {
+      const letter = $(id);
+      if (letter) letter.hidden = true;
+    });
   }
   audio.volume = 0.75;
   // Load the background video early. Start audio and video together once the
@@ -352,14 +480,47 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
     enter.classList.add('dismissed');
     setTimeout(() => enter.remove(), 550);
   }
-  async function enterSite() {
+  function enterSite() {
+    if (entered) return;
+
+    // Remove the intro immediately. Do not make entering the site depend on
+    // whether the browser or the remote media host allows playback.
+    dismissEnterScreen();
+
+    // Start both media elements directly inside the user's click/key gesture.
+    // Waiting for video readiness first can consume browser user activation
+    // and cause audio.play() to be rejected by autoplay protection.
+    try { audio.currentTime = 0; } catch (_) {}
+    try { video.currentTime = 0; } catch (_) {}
+
+    let audioStarted = false;
     try {
-      await startMediaTogether();
-      if (!audio.paused) dismissEnterScreen();
-      $('music-note').textContent = 'Soundtrack and background video started together. Use the volume slider to adjust the sound.';
+      const audioAttempt = audio.play();
+      if (audioAttempt && typeof audioAttempt.then === 'function') {
+        audioAttempt.then(() => {
+          audioStarted = true;
+          $('music-note').textContent = 'Soundtrack playing. Use the volume slider to adjust the sound.';
+          updatePlayer();
+        }).catch(() => {
+          $('music-note').textContent = 'The profile is open, but the soundtrack could not start. Press Play to try again.';
+          showToast('The profile opened. Press Play if you want to start the music.');
+          updatePlayer();
+        });
+      } else {
+        audioStarted = !audio.paused;
+      }
     } catch (_) {
-      $('enter-hint').textContent = 'AUTOPLAY WAS BLOCKED — CLICK AGAIN TO START MUSIC';
-      showToast('Your browser blocked autoplay. Click once to enable music.');
+      $('music-note').textContent = 'The profile is open, but the soundtrack could not start. Press Play to try again.';
+    }
+
+    // Decorative video is optional and must never block entry or the audio.
+    try {
+      const videoAttempt = video.play();
+      if (videoAttempt && typeof videoAttempt.catch === 'function') videoAttempt.catch(() => {});
+    } catch (_) {}
+
+    if (!audioStarted && audio.paused) {
+      $('music-note').textContent = 'The profile is open. Press Play to start the soundtrack.';
     }
     updatePlayer();
   }
@@ -480,10 +641,10 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
       if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
       const dx=p.x-mouse.x,dy=p.y-mouse.y,dist=Math.hypot(dx,dy);
       if(dist<150){p.x+=dx/(dist||1)*.12;p.y+=dy/(dist||1)*.12;}
-      ctx.fillStyle='rgba(225,220,255,.65)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,.55)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
       for(let j=i+1;j<points.length;j++){
         const q=points[j],d=Math.hypot(p.x-q.x,p.y-q.y);
-        if(d<105){ctx.strokeStyle=`rgba(190,175,255,${(1-d/105)*.16})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
+        if(d<105){ctx.strokeStyle=`rgba(255,255,255,${(1-d/105)*.13})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
       }
     }
     raf=requestAnimationFrame(animate);
@@ -495,48 +656,58 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
   // A failed decorative video must not affect the app.
   video.addEventListener('error',()=>{video.style.display='none';});
   if (reducedMotion) canvas.style.display = 'none';
-  // Visitor counter: use a shared CounterAPI total when configured. Until then,
-  // show a real per-browser visit count so the number is never just a mockup.
-  function countThisBrowser() {
-    const countEl = $('visitor-count');
-    const statusEl = $('visitor-count-status');
-    const labelEl = $('visitor-count-label');
-    let count = 1;
-    try {
-      const key = 'Santino-profile-local-visits-v1';
-      count = Math.max(0, Number(localStorage.getItem(key)) || 0) + 1;
-      localStorage.setItem(key, String(count));
-    } catch (error) {
-      // Storage may be blocked; still display this page view.
-    }
-    countEl.textContent = count.toLocaleString();
-    labelEl.textContent = 'Visits on this browser';
-    statusEl.textContent = 'Local count only · configure shared counter for all visitors';
-  }
+  // Permanent shared visitor counter. The counter name never changes, so it does not reset hourly.
   async function trackVisitor() {
     const countEl = $('visitor-count');
     const statusEl = $('visitor-count-status');
     const labelEl = $('visitor-count-label');
     const workspace = CONFIG.visitorCounterWorkspace;
     const token = CONFIG.visitorCounterToken;
+
+    labelEl.textContent = 'Overall website views';
+    statusEl.textContent = 'Counting all-time page views';
+
+    // Always show a numeric value instead of a dash while the shared counter is unavailable.
+    // This zero is a placeholder, not a verified all-time total, until CounterAPI connects.
+    countEl.textContent = '0';
     if (!workspace || !token || workspace.startsWith('REPLACE_') || token.startsWith('REPLACE_')) {
-      countThisBrowser();
+      statusEl.textContent = 'Connect CounterAPI to show the real all-time total';
       return;
     }
+
     try {
-      if (typeof window.Counter !== 'function') throw new Error('CounterAPI client did not load');
+      if (typeof window.Counter !== 'function') {
+        throw new Error('CounterAPI client did not load');
+      }
+
       const counter = new window.Counter({ workspace, accessToken: token, timeout: 8000 });
-      const result = await counter.up(CONFIG.visitorCounterName);
-      if (!result || !Number.isFinite(Number(result.value))) throw new Error('Counter response was invalid');
-      countEl.textContent = Number(result.value).toLocaleString();
-      labelEl.textContent = 'Total website visits';
-      statusEl.textContent = 'Visits recorded across visitors';
+      // Keep this exact name permanently. Do not append an hour/date to it.
+      const result = await counter.up('Santino-profile-total-visits');
+      const value = result && (result.value ?? result.data?.up_count);
+
+      if (!Number.isFinite(Number(value))) {
+        throw new Error('Counter response was invalid');
+      }
+
+      countEl.textContent = Number(value).toLocaleString();
+      statusEl.textContent = 'All-time page views · all visitors';
     } catch (error) {
-      countThisBrowser();
+      countEl.textContent = '0';
+      statusEl.textContent = 'Counter offline · 0 is a placeholder until connected';
       console.error('Visitor counter failed:', error);
     }
   }
   trackVisitor();
+
+  // Flip the soundtrack card to reveal the technologies used to build this site.
+  const musicCard = $('music-card');
+  function setMusicCardSide(showCode) {
+    musicCard.classList.toggle('is-flipped', showCode);
+    $('flip-card-btn').setAttribute('aria-pressed', String(showCode));
+    $('flip-card-btn').innerHTML = showCode ? 'BACK TO SOUNDTRACK <span aria-hidden="true">↻</span>' : 'VIEW CODE <span aria-hidden="true">↗</span>';
+  }
+  $('flip-card-btn').addEventListener('click', () => setMusicCardSide(true));
+  $('flip-card-back-btn').addEventListener('click', () => setMusicCardSide(false));
 
   updatePlayer();
 })();
