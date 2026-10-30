@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090d">
-<meta name="description" content="Santino — profile, activity, music and community links.">
-<title>Santino — Profile</title>
+<meta name="description" content="Kaido — profile, activity, music and community links.">
+<title>Kaido — Profile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@ body{margin:0;min-height:100vh;background:#000;color:#fff;font-family:Outfit,sys
 button,a,input{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit}
-#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-5;filter:grayscale(1) brightness(.27) contrast(1.08)}
-.bg-overlay{position:fixed;inset:0;z-index:-4;background:rgba(0,0,0,.88)}
+#bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-5;filter:grayscale(1) brightness(.45) contrast(1.08)}
+.bg-overlay{position:fixed;inset:0;z-index:-4;background:rgba(0,0,0,.65)}
 #bg-glow{position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:none;filter:none}
 canvas.fx{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
 .topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1380px;margin:auto;padding:22px clamp(18px,4vw,54px)}
@@ -86,9 +86,6 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 .activity-copy{min-width:0}.activity-copy strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.activity-copy small{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.45;overflow-wrap:anywhere}
 .empty-state{padding:22px;text-align:center;border:1px dashed #ffffff25;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}
 .footer{padding:0 20px 30px;text-align:center;color:#777988;font-size:11px}
-.visitor-counter{width:min(420px,calc(100% - 32px));margin:0 auto 24px;padding:16px 20px;display:flex;align-items:center;justify-content:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.96);backdrop-filter:blur(18px);box-shadow:0 18px 50px #0003;color:#d9d7e3}
-.visitor-counter-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#ffffff12;color:#ffffff;font-size:20px}
-.visitor-counter-copy{text-align:left}.visitor-counter-label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:700}.visitor-counter-value{font-size:23px;font-weight:800;line-height:1.25;font-variant-numeric:tabular-nums}.visitor-counter-status{font-size:10px;color:#858795;margin-top:2px}
 #enter-screen{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:rgba(5,5,9,.72);backdrop-filter:blur(24px);cursor:pointer;transition:opacity .5s,visibility .5s}
 .enter-content{text-align:center;animation:enterFloat 3s ease-in-out infinite}
 .enter-mark{width:70px;height:70px;display:grid;place-items:center;overflow:hidden;margin:0 auto 18px;border:1px solid #ffffff35;border-radius:24px;background:linear-gradient(135deg,#ffffff22,#77777722);font-size:28px;box-shadow:0 0 70px #ffffff22}
@@ -122,9 +119,9 @@ input[type=range]{accent-color:#fff;min-width:0;flex:1;cursor:pointer}
 :root{--bg:#000;--panel:rgba(255,255,255,.045);--line:rgba(255,255,255,.16);--muted:#a6a6a6;--accent:#fff;--green:#fff}
 body{background:#000}
 .bg-overlay{background:linear-gradient(135deg,rgba(0,0,0,.91),rgba(0,0,0,.78))}
-.panel,.visitor-counter{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025) 42%,rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.19);backdrop-filter:blur(28px) saturate(115%);-webkit-backdrop-filter:blur(28px) saturate(115%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),inset 0 -1px 0 rgba(255,255,255,.035),0 24px 80px rgba(0,0,0,.62)}
+.panel{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025) 42%,rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.19);backdrop-filter:blur(28px) saturate(115%);-webkit-backdrop-filter:blur(28px) saturate(115%);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),inset 0 -1px 0 rgba(255,255,255,.035),0 24px 80px rgba(0,0,0,.62)}
 .profile-panel:before{height:230px;background:radial-gradient(ellipse at 50% 0,rgba(255,255,255,.13),transparent 72%)}
-.ghost-btn,.primary-btn,.social-btn,.activity-item,.local-time,.control-btn,.live-pill,.visitor-counter-icon{background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025));border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.ghost-btn,.primary-btn,.social-btn,.activity-item,.local-time,.control-btn,.live-pill{background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025));border-color:rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
 .community-card{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .community-card:before{filter:grayscale(1);opacity:.19}
 .community-card:after{background:linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.28))}
@@ -139,7 +136,7 @@ body{background:#000}
 /* The intro remains clickable, but its logo/photo is removed from the first screen. */
 #enter-screen .enter-mark{display:none}
 .enter-title{letter-spacing:.16em}
-@media(hover:hover){.panel,.visitor-counter,.spotify-card{transition:border-color .25s ease,box-shadow .25s ease}.panel:hover,.visitor-counter:hover{border-color:rgba(255,255,255,.27);box-shadow:inset 0 1px 0 rgba(255,255,255,.17),0 28px 90px rgba(0,0,0,.7)}}
+@media(hover:hover){.panel,.spotify-card{transition:border-color .25s ease,box-shadow .25s ease}.panel:hover{border-color:rgba(255,255,255,.27);box-shadow:inset 0 1px 0 rgba(255,255,255,.17),0 28px 90px rgba(0,0,0,.7)}}
 
 
 /* Card sizing safety: keep both faces fully readable on desktop and mobile. */
@@ -184,7 +181,6 @@ img,video{max-width:100%;}
   .socials{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
   .social-btn{min-width:0;min-height:44px;padding:9px 5px;font-size:11px;}
   .community-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .visitor-counter{width:calc(100% - 24px);margin-bottom:20px;}
 }
 @media(max-width:380px){
   .brand{font-size:10px;letter-spacing:.08em;}
@@ -227,7 +223,7 @@ img,video{max-width:100%;}
     <div class="local-time">◷ <span>Local time</span><strong id="local-time">--:--</strong></div>
     <div class="section-label">Find me online</div>
     <nav class="socials" aria-label="Social links">
-      <a class="social-btn" href="https://www.youtube.com/@Santinoxyz" target="_blank" rel="noopener noreferrer"><span>▶</span>YouTube</a>
+      <a class="social-btn" href="https://www.youtube.com/@kaidoxyx" target="_blank" rel="noopener noreferrer"><span>▶</span>YouTube</a>
       <a class="social-btn" href="https://discord.com/channels/@1318483518262743072" target="_blank" rel="noopener noreferrer"><span>◈</span>Discord</a>
       <a class="social-btn" href="https://open.spotify.com/user/31est7dbpcaus4upurh7vs6i2wtm" target="_blank" rel="noopener noreferrer"><span>♫</span>Spotify</a>
     </nav>
@@ -248,7 +244,7 @@ img,video{max-width:100%;}
         <div class="music-card-inner" id="music-card-inner">
           <div class="music-card-face music-card-front">
         <button class="flip-card-btn" id="flip-card-btn" type="button" aria-label="Show website coding languages" aria-pressed="false">VIEW CODE <span aria-hidden="true">↗</span></button>
-        <div class="music-card-top"><span id="music-label">Santino's soundtrack</span><div class="equalizer" id="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b></div></div>
+        <div class="music-card-top"><span id="music-label">Kaido's soundtrack</span><div class="equalizer" id="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b></div></div>
         <img id="album-art" class="album-art" src="https://file.garden/arIVMF8UTouAgBFb/1938f2fe5a39b18a63ff368a97fc2754.jpg" alt="Music cover">
         <h3 id="track-title" class="track-title">Is Ya Ready</h3>
         <p id="track-artist" class="track-artist">Kay Flock</p>
@@ -286,20 +282,11 @@ img,video{max-width:100%;}
     </section>
   </div>
 </main>
-<section class="visitor-counter" aria-label="Website visitor counter">
-  <div class="visitor-counter-icon" aria-hidden="true">◉</div>
-  <div class="visitor-counter-copy">
-    <div class="visitor-counter-label" id="visitor-count-label">Overall website views</div>
-    <div class="visitor-counter-value" id="visitor-count" aria-live="polite">Loading…</div>
-    <div class="visitor-counter-status" id="visitor-count-status">Connecting to visitor counter</div>
-  </div>
-</section>
 <footer class="footer">Made with care · Profile presence depends on Discord's public Lanyard service.</footer>
 <div id="enter-screen" role="button" tabindex="0" aria-label="Enter profile and enable sound">
-  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">[[[ D O X  M E ]]]</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
+  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">Enter Kaido's world</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
 <script>
 (() => {
   'use strict';
@@ -309,18 +296,15 @@ img,video{max-width:100%;}
     // Replace with your image URL, e.g. https://example.com/profile.png. Leave empty to show K.
     profileMarkImage: 'https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg',
     audioUrl: 'https://file.garden/arIVMF8UTouAgBFb/Kay%20Flock%20-%20Is%20Ya%20Ready%20(shot%20by%20KLO%20Vizionz).mp3',
-    fallbackAudioUrl: 'https://file.garden/arIVMF8UTouAgBFb/Kay%20Flock%20-%20Is%20Ya%20Ready%20(shot%20by%20KLO%20Vizionz).mp3',
+    // Optional alternate MP3 URL. Leave empty if you do not have a second host.
+    fallbackAudioUrl: '',
     pollMs: 15000,
-    // Create a CounterAPI account, then paste your workspace and API token here.
-    visitorCounterWorkspace: 'Santino-profile',
-    visitorCounterToken: 'ut_94A1q11vUjoxzlujDPwKsHHp0xibRmEjRjY0FFUR',
-    visitorCounterName: 'Santino-profile-visits'
   };
   const audio = $('bg-audio');
   const video = $('bg-video');
   const enter = $('enter-screen');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let entered = false, effectsOn = !reducedMotion, lastSpotifyId = '', toastTimer;
+  let entered = false, effectsOn = !reducedMotion, lastSpotifyId = '', toastTimer, audioFallbackTried = false;
   // One configurable image is used for both K-logo locations.
   if (CONFIG.profileMarkImage.trim()) {
     // Some logo elements may be absent in customized versions of the page.
@@ -337,50 +321,17 @@ img,video{max-width:100%;}
     });
   }
   audio.volume = 0.75;
-  // Load the background video early. Start audio and video together once the
-  // video has enough data, rather than letting the MP3 get several seconds ahead.
+  // Load decorative video independently. Never delay audio while waiting for video.
   video.loop = true;
   video.muted = true;
   video.playsInline = true;
   video.preload = 'auto';
   video.load();
-  let startingTogether = false;
-  function waitForVideoReady(timeoutMs = 1800) {
-    if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) return Promise.resolve(true);
-    return new Promise(resolve => {
-      let finished = false;
-      const done = value => {
-        if (finished) return;
-        finished = true;
-        clearTimeout(timer);
-        video.removeEventListener('canplay', onReady);
-        video.removeEventListener('error', onError);
-        resolve(value);
-      };
-      const onReady = () => done(true);
-      const onError = () => done(false);
-      const timer = setTimeout(() => done(false), timeoutMs);
-      video.addEventListener('canplay', onReady, { once: true });
-      video.addEventListener('error', onError, { once: true });
-      video.load();
-    });
+  function startVideoIfPossible() {
+    if (audio.paused || video.error) return;
+    video.play().catch(() => { /* Background video is optional. */ });
   }
-  async function startMediaTogether() {
-    if (startingTogether) return;
-    startingTogether = true;
-    try {
-      await waitForVideoReady();
-      // Start both from zero so the video never jumps to a verse that already passed.
-      try { audio.currentTime = 0; } catch (_) {}
-      try { video.currentTime = 0; } catch (_) {}
-      const videoPromise = video.play().catch(() => null);
-      const audioPromise = audio.play().catch(() => null);
-      await Promise.all([videoPromise, audioPromise]);
-    } finally {
-      startingTogether = false;
-      updatePlayer();
-    }
-  }
+  video.addEventListener('canplay', startVideoIfPossible);
   audio.addEventListener('play', () => {
     if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && video.paused) {
       video.play().catch(() => {});
@@ -420,6 +371,7 @@ img,video{max-width:100%;}
     const pct = dur ? (audio.currentTime / dur) * 100 : 0;
     $('progress-fill').style.width = `${pct}%`;
     $('progress-track').setAttribute('aria-valuenow', String(Math.round(pct)));
+    $('progress-track').setAttribute('aria-valuetext', `${fmt(audio.currentTime || 0)} of ${fmt(dur)}`);
     $('current-time').textContent = fmt(audio.currentTime || 0);
     $('duration').textContent = fmt(dur);
     $('mute-btn').textContent = audio.muted || audio.volume === 0 ? '×' : '♪';
@@ -471,7 +423,19 @@ img,video{max-width:100%;}
   });
   ['timeupdate','durationchange','play','pause','ended','volumechange','loadedmetadata','error'].forEach(ev => audio.addEventListener(ev, () => {
     updatePlayer();
-    if (ev === 'error') $('music-note').textContent = 'Audio source failed to load. Check the MP3 URL and hosting permissions.';
+    if (ev === 'error') {
+      const fallback = String(CONFIG.fallbackAudioUrl || '').trim();
+      if (fallback && !audioFallbackTried && fallback !== CONFIG.audioUrl) {
+        audioFallbackTried = true;
+        audio.src = fallback;
+        audio.load();
+        $('music-note').textContent = 'Primary audio source failed. Trying the backup source…';
+        audio.play().catch(() => { $('music-note').textContent = 'Backup audio is ready. Press Play to start it.'; });
+      } else {
+        $('music-note').textContent = 'Audio source failed to load. Check the MP3 URL and hosting permissions.';
+        showToast('Music could not load. The rest of the profile is still available.');
+      }
+    }
   }));
   setInterval(updatePlayer, 500);
   function dismissEnterScreen() {
@@ -526,18 +490,17 @@ img,video{max-width:100%;}
   }
   enter.addEventListener('click', enterSite);
   enter.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enterSite(); } });
-  // Attempt audible autoplay immediately. Browsers may require a user gesture; if so,
-  // the enter overlay remains as a clear one-click fallback instead of falsely claiming playback.
+  // Try autoplay without waiting for the decorative video. Browsers commonly
+  // block audible autoplay; the intro click remains the reliable user-gesture fallback.
   (async () => {
     try {
-      await startMediaTogether();
-      if (!audio.paused) {
-        dismissEnterScreen();
-        $('music-note').textContent = 'Soundtrack and background video are playing together.';
-      }
+      await audio.play();
+      dismissEnterScreen();
+      $('music-note').textContent = 'Soundtrack playing. Use the volume slider to adjust the sound.';
+      startVideoIfPossible();
     } catch (_) {
       $('enter-hint').textContent = 'CLICK TO ENABLE MUSIC';
-      $('music-note').textContent = 'Your browser may block autoplay with sound. Click the screen once to start music and video together.';
+      $('music-note').textContent = 'Your browser may block autoplay with sound. Click the screen once to start music.';
     }
     updatePlayer();
   })();
@@ -557,7 +520,7 @@ img,video{max-width:100%;}
   function setSpotify(data) {
     const art = data.album_art_url || 'https://cdn.discordapp.com/embed/avatars/0.png';
     $('album-art').src = art;
-    $('album-art').onerror = () => { $('album-art').src = 'https://cdn.discordapp.com/embed/avatars/0.png'; };
+    $('album-art').onerror = () => { $('album-art').onerror = null; $('album-art').src = 'https://cdn.discordapp.com/embed/avatars/0.png'; };
     $('track-title').textContent = data.song || 'Unknown track';
     $('track-artist').textContent = `${data.artist || 'Unknown artist'}${data.album ? ' · ' + data.album : ''}`;
     $('music-label').textContent = 'Listening on Spotify';
@@ -589,9 +552,10 @@ img,video{max-width:100%;}
       const result = await response.json();
       if (!result.success || !result.data) throw new Error('Presence unavailable');
       const d = result.data, user = d.discord_user || {};
-      $('avatar').src = user.avatar ? `https://cdn.discordapp.com/avatars/${CONFIG.discordId}/${user.avatar}.png?size=256` : `https://cdn.discordapp.com/embed/avatars/0.png`;
+      const avatarExt = user.avatar && user.avatar.startsWith('a_') ? 'gif' : 'png';
+      $('avatar').src = user.avatar ? `https://cdn.discordapp.com/avatars/${CONFIG.discordId}/${user.avatar}.${avatarExt}?size=256` : 'https://cdn.discordapp.com/embed/avatars/0.png';
       $('avatar').onerror = () => { $('avatar').src = 'https://cdn.discordapp.com/embed/avatars/0.png'; };
-      $('display-name').textContent = user.global_name || user.username || 'Santino';
+      $('display-name').textContent = user.global_name || user.username || 'Kaido';
       $('username').textContent = user.username ? `@${user.username}` : '@unknown';
       const status = d.discord_status || 'offline';
       const colors = {online:'#23a55a',idle:'#f0b232',dnd:'#f04747',offline:'#747783'};
@@ -606,7 +570,7 @@ img,video{max-width:100%;}
       const spotify = d.listening_to_spotify && d.spotify ? d.spotify : null;
       if (spotify) setSpotify(spotify);
       else {
-        $('music-label').textContent = "Santino's soundtrack";
+        $('music-label').textContent = "Kaido's soundtrack";
         $('music-note').textContent = 'The card above is the background soundtrack. Spotify listening status will appear here when available.';
       }
       renderActivities(d.activities || [], spotify);
@@ -621,7 +585,7 @@ img,video{max-width:100%;}
   setInterval(fetchPresence, CONFIG.pollMs);
 
   // Lightweight mouse-reactive constellation background; no zero-dot loop or runaway trail array.
-  const canvas = $('web'), ctx = canvas.getContext('2d');
+  const canvas = $('web'), ctx = canvas.getContext ? canvas.getContext('2d') : null;
   let w=0,h=0,points=[],raf=0,mouse={x:-1000,y:-1000};
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 1.6);
@@ -634,7 +598,7 @@ img,video{max-width:100%;}
   }
   function animate() {
     cancelAnimationFrame(raf);
-    if (!effectsOn) return;
+    if (!effectsOn || !ctx) return;
     ctx.clearRect(0,0,w,h);
     for (let i=0;i<points.length;i++) {
       const p=points[i]; p.x+=p.vx;p.y+=p.vy;
@@ -654,54 +618,13 @@ img,video{max-width:100%;}
   window.addEventListener('pointerleave',()=>{mouse.x=-1000;mouse.y=-1000;});
   resize(); animate();
   // A failed decorative video must not affect the app.
-  video.addEventListener('error',()=>{video.style.display='none';});
+  video.addEventListener('error',()=>{video.pause();video.style.display='none';});
   if (reducedMotion) canvas.style.display = 'none';
-  // Permanent shared visitor counter. The counter name never changes, so it does not reset hourly.
-  async function trackVisitor() {
-    const countEl = $('visitor-count');
-    const statusEl = $('visitor-count-status');
-    const labelEl = $('visitor-count-label');
-    const workspace = CONFIG.visitorCounterWorkspace;
-    const token = CONFIG.visitorCounterToken;
-
-    labelEl.textContent = 'Overall website views';
-    statusEl.textContent = 'Counting all-time page views';
-
-    // Always show a numeric value instead of a dash while the shared counter is unavailable.
-    // This zero is a placeholder, not a verified all-time total, until CounterAPI connects.
-    countEl.textContent = '0';
-    if (!workspace || !token || workspace.startsWith('REPLACE_') || token.startsWith('REPLACE_')) {
-      statusEl.textContent = 'Connect CounterAPI to show the real all-time total';
-      return;
-    }
-
-    try {
-      if (typeof window.Counter !== 'function') {
-        throw new Error('CounterAPI client did not load');
-      }
-
-      const counter = new window.Counter({ workspace, accessToken: token, timeout: 8000 });
-      // Keep this exact name permanently. Do not append an hour/date to it.
-      const result = await counter.up('Santino-profile-total-visits');
-      const value = result && (result.value ?? result.data?.up_count);
-
-      if (!Number.isFinite(Number(value))) {
-        throw new Error('Counter response was invalid');
-      }
-
-      countEl.textContent = Number(value).toLocaleString();
-      statusEl.textContent = 'All-time page views · all visitors';
-    } catch (error) {
-      countEl.textContent = '0';
-      statusEl.textContent = 'Counter offline · 0 is a placeholder until connected';
-      console.error('Visitor counter failed:', error);
-    }
-  }
-  trackVisitor();
 
   // Flip the soundtrack card to reveal the technologies used to build this site.
   const musicCard = $('music-card');
   function setMusicCardSide(showCode) {
+    if (!musicCard) return;
     musicCard.classList.toggle('is-flipped', showCode);
     $('flip-card-btn').setAttribute('aria-pressed', String(showCode));
     $('flip-card-btn').innerHTML = showCode ? 'BACK TO SOUNDTRACK <span aria-hidden="true">↻</span>' : 'VIEW CODE <span aria-hidden="true">↗</span>';
