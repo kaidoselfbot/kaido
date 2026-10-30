@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#08090d">
-<meta name="description" content="Kaido — profile, activity, music and community links.">
-<title>Kaido — Profile</title>
+<meta name="description" content="Santino — profile, activity, music and community links.">
+<title>Santino</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -244,7 +244,7 @@ img,video{max-width:100%;}
         <div class="music-card-inner" id="music-card-inner">
           <div class="music-card-face music-card-front">
         <button class="flip-card-btn" id="flip-card-btn" type="button" aria-label="Show website coding languages" aria-pressed="false">VIEW CODE <span aria-hidden="true">↗</span></button>
-        <div class="music-card-top"><span id="music-label">Kaido's soundtrack</span><div class="equalizer" id="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b></div></div>
+        <div class="music-card-top"><span id="music-label">Santino's soundtrack</span><div class="equalizer" id="equalizer" aria-hidden="true"><b></b><b></b><b></b><b></b></div></div>
         <img id="album-art" class="album-art" src="https://file.garden/arIVMF8UTouAgBFb/1938f2fe5a39b18a63ff368a97fc2754.jpg" alt="Music cover">
         <h3 id="track-title" class="track-title">Is Ya Ready</h3>
         <p id="track-artist" class="track-artist">Kay Flock</p>
@@ -284,7 +284,7 @@ img,video{max-width:100%;}
 </main>
 <footer class="footer">Made with care · Profile presence depends on Discord's public Lanyard service.</footer>
 <div id="enter-screen" role="button" tabindex="0" aria-label="Enter profile and enable sound">
-  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">Enter Kaido's world</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
+  <div class="enter-content"><div class="enter-mark"><img id="enter-mark-image" alt="Profile logo" src="https://file.garden/arIVMF8UTouAgBFb/ee595264269aacdbb0244f7d93f3ee39.jpg"><span id="enter-mark-letter" hidden>K</span></div><div class="enter-title">[[[ D O X  M E ]]]</div><div class="enter-hint" id="enter-hint">CLICK TO ENABLE MUSIC</div></div>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script>
@@ -499,7 +499,7 @@ img,video{max-width:100%;}
       $('music-note').textContent = 'Soundtrack playing. Use the volume slider to adjust the sound.';
       startVideoIfPossible();
     } catch (_) {
-      $('enter-hint').textContent = 'CLICK TO ENABLE MUSIC';
+      $('enter-hint').textContent = 'CLICK TO ENTER';
       $('music-note').textContent = 'Your browser may block autoplay with sound. Click the screen once to start music.';
     }
     updatePlayer();
@@ -555,7 +555,7 @@ img,video{max-width:100%;}
       const avatarExt = user.avatar && user.avatar.startsWith('a_') ? 'gif' : 'png';
       $('avatar').src = user.avatar ? `https://cdn.discordapp.com/avatars/${CONFIG.discordId}/${user.avatar}.${avatarExt}?size=256` : 'https://cdn.discordapp.com/embed/avatars/0.png';
       $('avatar').onerror = () => { $('avatar').src = 'https://cdn.discordapp.com/embed/avatars/0.png'; };
-      $('display-name').textContent = user.global_name || user.username || 'Kaido';
+      $('display-name').textContent = user.global_name || user.username || 'Santino';
       $('username').textContent = user.username ? `@${user.username}` : '@unknown';
       const status = d.discord_status || 'offline';
       const colors = {online:'#23a55a',idle:'#f0b232',dnd:'#f04747',offline:'#747783'};
@@ -570,7 +570,7 @@ img,video{max-width:100%;}
       const spotify = d.listening_to_spotify && d.spotify ? d.spotify : null;
       if (spotify) setSpotify(spotify);
       else {
-        $('music-label').textContent = "Kaido's soundtrack";
+        $('music-label').textContent = "Santino's soundtrack";
         $('music-note').textContent = 'The card above is the background soundtrack. Spotify listening status will appear here when available.';
       }
       renderActivities(d.activities || [], spotify);
